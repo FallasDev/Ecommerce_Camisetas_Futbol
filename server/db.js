@@ -1,7 +1,11 @@
-import mysql from "mysql";
-export var connection = mysql.createConnection({
-    host     : 'viaduct.proxy.rlwy.net',
-    user     : 'root',
-    password : '2b-GEgEfAfEfHBbgAbhAhGBaf5aHE53Ft',
-    database : 'railway'
-});
+import Admin from "firebase-admin";
+import "dotenv/config"
+
+const serviceAcount = process.env.CLIENT_INFO
+
+export const admin = Admin.initializeApp({
+    credential: Admin.credential.cert(serviceAcount),
+    databaseURL: process.env.DATABASE_URL
+})
+
+
