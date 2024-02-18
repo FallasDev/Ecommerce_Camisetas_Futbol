@@ -22,9 +22,14 @@ const getLeague = async (team) => {
 
 // Route for retrieving data of a specific team
 router.get("/Equipos/:team", async (req, res) => {
-    const { team } = req.params;
-    const league = await getLeague(team);
-    res.send(league[team]);
+    try {
+        const { team } = req.params;
+        const league = await getLeague(team);
+        if(!league) throw new Error("Team does not found!");
+        res.send(league[team]);
+    } catch(err){
+        res.send(err.message);
+    }
 });
 
 export default router;
