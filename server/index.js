@@ -3,7 +3,8 @@ import morgan from "morgan";
 import index from "./Routes/index.js";
 import ligas from "./Routes/Ligas.js";
 import equipo from "./Routes/Equipos.js";
-import registro from "./Routes/Registro.js"
+import registro from "./Routes/Registro.js";
+import login from "./Routes/Login.js";
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(index);
 app.use("/GoalThreads",ligas);
 app.use("/GoalThreads",equipo);
 app.use("/GoalThreads",registro);
+app.use("/GoalThreads", login)
 
 app.listen(app.get("PORT"),() => {
     console.log(`Escuchando en el puerto: ${app.get("PORT")}`);
