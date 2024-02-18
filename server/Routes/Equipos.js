@@ -1,28 +1,30 @@
-import { admin } from "../db.js";
 import { Router } from "express";
+import { admin } from "../db.js";
 
 const router = Router();
+
+// Accessing the Firebase Realtime Database from the admin SDK
 const db = admin.database();
 
-const obtenerEquipo = async (equipo) => {
+const getLeague = async (team) => {
     return new Promise((resolve) => {
         db.ref(`/Ligas/`).once("value", (snapshot) => {
-            //Obtener la liga según el equipo
-            const ligasValores = Object.values(snapshot.val());
-            const liga = ligasValores.find((ligaItem) => {
-                const equipoEncontrado = Object.keys(ligaItem).find((equipoItem) => equipoItem === equipo);
-                return equipoEncontrado;
-            })
-            resolve(liga)
+            // Get the league based on the team
+            const leaguesValues = Object.values(snapshot.val());
+            const league = leaguesValues.find((leagueItem) => {
+                const teamFound = Object.keys(leagueItem).find((teamItem) => teamItem === team);
+                return teamFound;
+            });
+            resolve(league);
         });
-    })
-}
+    });
+};
 
-router.get("/Equipos/:equipo", async (req,res) => {
-    const { equipo } = req.params;
-    const liga = await obtenerEquipo(equipo)
-    res.send(liga[equipo])
+// Route for retrieving data of a specific team
+router.get("/Equipos/:team", async (req, res) => {
+    const { team } = req.params;
+    const league = await getLeague(team);
+    res.send(league[team]);
 });
-
 
 export default router;

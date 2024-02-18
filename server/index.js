@@ -25,5 +25,5 @@ app.use("/GoalThreads",registro);
 app.use("/GoalThreads", login)
 
 app.listen(app.get("PORT"),() => {
-    console.log(`Escuchando en el puerto: ${app.get("PORT")}`);
+    console.log(`Listen on port: ${app.get("PORT")}`);
 });
