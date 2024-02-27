@@ -1,0 +1,30 @@
+.DiscountCoupons-article{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    border-top: 1px solid black;
+    padding-top: 40px;
+    gap: 30px;
+}
+
+.DiscountCoupons-article img {
+    width: 38%;
+    border-radius: 16px;
+}
+
+.DiscountCoupons-article div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: -10px;
+}
+
+
+@media (max-width: 792px) {
+    .DiscountCoupons-article {
+        flex-direction: column;
+    }
+}
