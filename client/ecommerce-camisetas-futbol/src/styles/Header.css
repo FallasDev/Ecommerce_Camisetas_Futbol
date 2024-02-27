@@ -1,0 +1,77 @@
+* {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1.2px;
+}
+
+
+.header-main {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-main nav {
+    width: 50%;
+}
+
+.nav-ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+li{
+    list-style: none;
+}
+
+.nav-ul li a {
+    font-size: 1.2em;
+    color: black;
+    text-decoration: none;
+}
+
+.header-h2 {
+    font-family: "Pacifico", cursive;
+    font-size: 2.4em;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.lupa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+}
+
+.carito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+}   
+
+.header-main-mobile nav {
+    display: none;
+}
+
+.header-main-mobile{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}

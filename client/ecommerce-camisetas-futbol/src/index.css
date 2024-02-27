@@ -1,0 +1,11 @@
+:root{
+    --titulos: black;
+    --parrafos: #576d7e;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
