@@ -14,6 +14,8 @@ const serviceAcount = {
     client_x509_cert_url: process.env.CLIENT_X509_CERT_URL,
     universe_domain: process.env.UNIVERSE_DOMAIN
 };
+
+
 export const admin = Admin.initializeApp({
     credential: Admin.credential.cert(serviceAcount),
     databaseURL: process.env.DATABASE_URL

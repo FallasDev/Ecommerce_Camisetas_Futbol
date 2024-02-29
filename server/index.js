@@ -2,8 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import index from "./Routes/index.js";
-import ligas from "./Routes/Ligas.js";
-import equipo from "./Routes/Equipos.js";
+import getCamisas from "./Routes/getCamisas.js";
 import registro from "./Routes/Registro.js";
 import login from "./Routes/Login.js";
 
@@ -22,8 +21,7 @@ app.use(cors());
 
 //Routes
 app.use(index);
-app.use("/GoalThreads",ligas);
-app.use("/GoalThreads",equipo);
+app.use("/GoalThreads/getCamisas",getCamisas);
 app.use("/GoalThreads",registro);
 app.use("/GoalThreads", login)
 
