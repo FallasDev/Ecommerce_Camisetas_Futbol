@@ -42,16 +42,6 @@ li{
     justify-content: center;
 }
 
-.lupa{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    background: transparent;
-    border: none;
-}
 
 .carito{
     display: flex;

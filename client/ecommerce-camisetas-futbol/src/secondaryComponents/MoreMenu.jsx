@@ -1,11 +1,11 @@
 import "../styles/MoreMenu.css";
-import lupa from "../assets/lupa.png";
 import carritoDeCompras from "../assets/carrito-de-compras.png";
 import MoreMenuIcon from "../assets/more-1.webp";
 import XIcon from "../assets/x.webp";
 import User from "../assets/user-interface.webp";
 import { useState } from "react";
 import Logo from "./Logo";
+import FindComponent from "../components/FindComponent";
 
 function MoreMenu(){
 
@@ -28,7 +28,7 @@ function MoreMenu(){
                 </ul>
             </div>}
             <ul className="more-menu-ul">
-                <li><button className="lupa"><img src={lupa} alt="" /></button></li>
+                <FindComponent/>
                 <li><button className="carito"><img src={carritoDeCompras} alt="" /></button> </li>
                 <li><a className="user" href=""><img src={User} alt="" /></a></li>
             </ul>

@@ -1,4 +1,5 @@
 import './App.css';
+import ContextApp from './ContextApp.jsx';
 import Copyright from './components/Copyright.jsx';
 import DiscountCoupons from './components/DiscountCoupons.jsx';
 import Footer from './components/Footer.jsx';
@@ -11,14 +12,16 @@ function App() {
 
   return (
     <>
-      <Header/>
-      <main>
-        <HeroBanner/>
-        <MainShirts/>
-        <DiscountCoupons/>
-      </main>
-      <Footer/>
-      <Copyright/>
+      <ContextApp>
+        <Header/>
+        <main>
+          <HeroBanner/>
+          <MainShirts/>
+          <DiscountCoupons/>
+        </main>
+        <Footer/>
+        <Copyright/>
+      </ContextApp>
     </>
   )
 }
