@@ -1,11 +1,11 @@
 import "../styles/Header.css";
-import lupa from "../assets/lupa.png"
 import carritoDeCompras from "../assets/carrito-de-compras.png"
 import Logo from "../secondaryComponents/Logo";
 import MoreMenu from "../secondaryComponents/MoreMenu";
 import FindComponent from "./FindComponent";
 import { useContext } from "react";
 import { context } from "../ContextApp";
+import Lupa from "../secondaryComponents/Lupa";
 
 function Header(){
 
@@ -21,12 +21,12 @@ function Header(){
                 </ul>
             </nav>
             }
-            {screen.width < 792 && <MoreMenu/>}
-            {!isFinding &&screen.width > 792 && <Logo/>}
+            {screen.width < 792 && !isFinding && <MoreMenu/>}
+            {!isFinding && screen.width > 792 && <Logo/>}
             
             {!isFinding ? <nav>
                 <ul className="nav-ul">
-                    <FindComponent/>
+                    <Lupa/>
                     <li><button className="carito"><img src={carritoDeCompras} alt="" /></button></li>
                     <li><a href="">Iniciar Sesión</a></li>
                 </ul>

@@ -1,21 +1,22 @@
 import { useContext, useEffect, useState } from "react"
-import lupa from "../assets/lupa.png";
 import FindInput from "../secondaryComponents/FindInput";
 import "../styles/FindComponent.css"
-import X from "../assets/x-black.webp";
 import { context } from "../ContextApp";
+import Lupa from "../secondaryComponents/Lupa";
+import { Link } from "react-router-dom";
 
 function FindComponent(){
 
-    const { isFinding,setIsFinding } = useContext(context);
+    const { shirtData,setShirtData,isFinding } = useContext(context);
     const [ inputValue,setInputValue ] = useState("");
     const [ data,setData ] = useState("");
     
 
     useEffect(() => {
-        fetch(`https://ecommerce-camisetas-futbol-ltiq.onrender.com/GoalThreads/Equipos/${inputValue}`)
+        fetch(`https://ecommerce-camisetas-futbol-ltiq.onrender.com/GoalThreads/getCamisas/${inputValue}`)
         .then(res => res.json())
-        .then(dataJSON => {setData(dataJSON); console.log(dataJSON)})
+        .then(dataJSON => {setShirtData(dataJSON); console.log(dataJSON)})
+        console.log(isFinding)
     },[inputValue]);
 
     const handleInput = (ev) => {
@@ -24,14 +25,20 @@ function FindComponent(){
     } 
     
     return (
-        <div className="Find-component">
+        <div className={!isFinding ? "Find-component-flex" : "Find-component-grid"}>
             {(isFinding) && <FindInput onChange={handleInput}/>}
-            <li><button className="lupa" onClick={() => {setIsFinding(!isFinding)}}><img src={(!isFinding) ? lupa : X} alt="" /></button></li>
-                {(data.length > 0) && data.map((item,index) => 
-                    <ul>
-                        <li>{item.LigaNombre}</li>
-                    </ul>    
+            <Lupa/>
+            {isFinding && <ul className="list-search">
+                {(shirtData.length > 0) && shirtData.map((item,index) => 
+                        <li key={index}>
+                            {item && item.LigaData && item.LigaData.Nombre ? (
+                                <Link className="product-link" to={`/product-page/${item.LigaData.Nombre}`}>{item.LigaData.Nombre}</Link>
+                            ) : (
+                                item && item.Nombre ? <Link className="product-link" to={`/product-page/${item.Nombre}`}>{item.Nombre}</Link> : null
+                            )}
+                        </li>
                 )}
+            </ul> }
         </div>
     )
 }

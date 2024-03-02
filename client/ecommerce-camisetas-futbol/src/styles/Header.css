@@ -11,6 +11,7 @@
     align-items: center;
     padding: 20px;
     text-align: center;
+    width: 100%;
 }
 
 .header-main nav {
@@ -60,7 +61,7 @@ li{
 
 .header-main-mobile{
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     gap: 10px;
     width: 100%;
