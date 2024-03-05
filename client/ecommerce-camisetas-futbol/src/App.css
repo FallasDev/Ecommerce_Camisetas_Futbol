@@ -5,3 +5,8 @@ main {
     flex-direction: column;
     margin-top: 20px;
 }
+
+.buy-car-open{
+    filter: brightness(.5);
+    background-color: white;
+}

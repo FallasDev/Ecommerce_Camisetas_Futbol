@@ -3,13 +3,15 @@ import carritoDeCompras from "../assets/carrito-de-compras.png";
 import MoreMenuIcon from "../assets/more-1.webp";
 import XIcon from "../assets/x.webp";
 import User from "../assets/user-interface.webp";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import Logo from "./Logo";
 import FindComponent from "../components/FindComponent";
+import { context } from "../ContextApp";
 
 function MoreMenu(){
 
-    const [ isChecked,setIsChecked ] = useState(false)
+    const [ isChecked,setIsChecked ] = useState(false);
+    const { isBuyCar,setIsBuyCar } = useContext(context)
 
     return (
         <section className="more-menu">
@@ -29,7 +31,7 @@ function MoreMenu(){
             </div>}
             <ul className="more-menu-ul">
                 <FindComponent/>
-                <li><button className="carito"><img src={carritoDeCompras} alt="" /></button> </li>
+                <li><button className="carito" onClick={() => setIsBuyCar(!isBuyCar)}><img src={carritoDeCompras} alt="" /></button> </li>
                 <li><a className="user" href=""><img src={User} alt="" /></a></li>
             </ul>
         </section>

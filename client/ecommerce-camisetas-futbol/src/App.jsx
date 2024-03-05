@@ -1,5 +1,6 @@
+import { useContext } from 'react';
 import './App.css';
-import ContextApp from './ContextApp.jsx';
+import ContextApp, { context } from './ContextApp.jsx';
 import Copyright from './components/Copyright.jsx';
 import DiscountCoupons from './components/DiscountCoupons.jsx';
 import Footer from './components/Footer.jsx';
@@ -9,19 +10,18 @@ import MainShirts from './components/MainShirts.jsx';
 
 function App() {
 
+  const { isBuyCar } = useContext(context);
 
   return (
     <>
-      <ContextApp>
         <Header/>
-        <main>
+        <main className={isBuyCar && "buy-car-open"}>
           <HeroBanner/>
           <MainShirts/>
           <DiscountCoupons/>
         </main>
         <Footer/>
         <Copyright/>
-      </ContextApp>
     </>
   )
 }

@@ -6,10 +6,11 @@ import FindComponent from "./FindComponent";
 import { useContext } from "react";
 import { context } from "../ContextApp";
 import Lupa from "../secondaryComponents/Lupa";
+import BuyCarComponent from "./BuyCarComponent";
 
 function Header(){
 
-    const { isFinding } = useContext(context)
+    const { isFinding,setIsBuyCar,isBuyCar } = useContext(context)
 
     return (
         <header className={screen.width < 792 ? "header-main-mobile" : "header-main"}>
@@ -27,10 +28,11 @@ function Header(){
             {!isFinding ? <nav>
                 <ul className="nav-ul">
                     <Lupa/>
-                    <li><button className="carito"><img src={carritoDeCompras} alt="" /></button></li>
+                    <li><button className="carito" onClick={() => setIsBuyCar(!isBuyCar)}><img src={carritoDeCompras} alt="" /></button></li>
                     <li><a href="">Iniciar Sesión</a></li>
                 </ul>
             </nav> : <FindComponent/>} 
+            {isBuyCar && <BuyCarComponent/>}
         </header>
     )
 }
