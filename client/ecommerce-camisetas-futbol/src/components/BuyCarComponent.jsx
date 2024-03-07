@@ -1,5 +1,5 @@
 import { useContext,useEffect, useState } from "react";
-import { context, setDataShirt, shirtData } from "../ContextApp";
+import { context, localShirtData } from "../ContextApp";
 import X from "../assets/x-black.webp";
 import ProductBuyCar from "../secondaryComponents/ProductBuyCar";
 import "../styles/buyCar.css";
@@ -9,10 +9,10 @@ function BuyCarComponent(){
 
     const { changePrice,setIsBuyCar,isBuyCar } = useContext(context);
     const [ price,setPrice ] = useState(localPrice)
-    const [ data,setData ] = useState(shirtData)
 
     useEffect(() => {
         priceChange()
+        console.log(localShirtData)
     },[changePrice])
 
     const priceChange = () => {
@@ -21,8 +21,8 @@ function BuyCarComponent(){
         let patchLigaAmount = 0
         if(changePrice.length > 0){
             changePrice.map((item) => {
-               patchChampionsAmount = item.hasLigaPatch ? 2 : 0
-               patchLigaAmount = item.hasChampionsPatch ? 6 : 0
+               patchChampionsAmount = item.patch.hasLigaPatch ? 6 : 0
+               patchLigaAmount = item.patch.hasChampionsPatch ? 6 : 0
                finalPrice += (item.price * item.stock) + patchChampionsAmount + patchLigaAmount
                setPrice(finalPrice);
                setLocalPrice(finalPrice);
@@ -35,7 +35,7 @@ function BuyCarComponent(){
     return (    
         <div className="buy-car">
             <header className="buy-car-header">
-                <h3>Tu carito ({changePrice.length})</h3>
+                <h3>Tu carrito ({changePrice.length})</h3>
                 <button onClick={() => {
                     setIsBuyCar(!isBuyCar)
                     location.reload()

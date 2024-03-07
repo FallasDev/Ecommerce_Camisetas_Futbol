@@ -1,0 +1,36 @@
+.modal-box{
+    position: fixed;
+    top: 6%;
+    z-index: 100;
+    width: 14%;
+    right: 4%;
+    display: grid;
+    grid-template-areas: 
+    "shirt content";
+    place-items: center;
+    overflow: hidden;
+    background-color: #D3D3D3;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 16px;
+}
+
+.modal-box p{
+    grid-area: content;
+    font-size: 1em;
+    font-family: sans-serif;
+    width: 100%;
+    text-wrap:pretty;
+}
+
+.modal-box img {
+    grid-area: shirt;
+    width: 64px;
+    height: 64px;
+}
+
+@media (max-width: 792px) {
+    .modal-box {
+        width: 60%;
+    }
+}

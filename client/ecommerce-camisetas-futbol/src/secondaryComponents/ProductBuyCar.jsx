@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { context, shirtData, setDataShirt } from "../ContextApp";
+import { context, localShirtData, setLocalDataShirt } from "../ContextApp";
 import trashIcon from "../assets/icons8-basura.gif";
 import "../styles/buyCar.css";
+import Counter from "./Counter";
 
 function ProductBuyCar() {
-  const [data, setData] = useState(shirtData);
+  const [data, setData] = useState(localShirtData);
   const { changePrice, setChangePrice } = useContext(context);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ function ProductBuyCar() {
     });
     setData(newData);
     setChangePrice(newData);
-    setDataShirt(newData);
+    setLocalDataShirt(newData);
   };
 
   const subtractStock = (stock) => {
@@ -38,14 +39,14 @@ function ProductBuyCar() {
     });
     setData(newData);
     setChangePrice(newData);
-    setDataShirt(newData)
+    setLocalDataShirt(newData)
   };
 
   const deleteShirt = (element) => {
     const newData = data.filter((item) => item.name !== element.name);
     changeShowing(element);
     setData(newData);
-    setDataShirt(newData);
+    setLocalDataShirt(newData);
     setChangePrice(newData);
   };
 
@@ -56,7 +57,7 @@ function ProductBuyCar() {
     }));
     setData(newData);
     setChangePrice(newData);
-    setDataShirt(newData);
+    setLocalDataShirt(newData);
   };
 
   
@@ -68,11 +69,7 @@ function ProductBuyCar() {
           <img className="buy-car-imgShirt" src={item.src} alt="Camiseta Equipo" />
           <h4 className="buy-car-ShirtName">{item.name}</h4>
           <span className="buy-car-shirtPrice">${item.price}</span>
-          <div className="buy-car-boxStock">
-            <button onClick={() => subtractStock(item)}>-</button>
-            <p>{item.stock}</p>
-            <button onClick={() => sumStock(item)}>+</button>
-          </div>
+          <Counter number={item.stock} sum={() => sumStock(item)} substract={() => subtractStock(item)}/>
           <button className="buy-car-trashButton" onClick={() => deleteShirt(item)}>
             <img src={trashIcon} alt="Eliminar" />
           </button>

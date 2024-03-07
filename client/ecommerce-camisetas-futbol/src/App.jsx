@@ -15,7 +15,7 @@ function App() {
   return (
     <>
         <Header/>
-        <main className={isBuyCar && "buy-car-open"}>
+        <main className={isBuyCar ? "buy-car-open" : undefined}>
           <HeroBanner/>
           <MainShirts/>
           <DiscountCoupons/>

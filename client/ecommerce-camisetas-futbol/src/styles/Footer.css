@@ -36,6 +36,10 @@
     text-decoration: none;
 }
 
+.footer-logo{
+    font-family: "Pacifico", cursive;
+}
+
 @media (max-width: 792px) {
     .footer-main {
         text-align: center;

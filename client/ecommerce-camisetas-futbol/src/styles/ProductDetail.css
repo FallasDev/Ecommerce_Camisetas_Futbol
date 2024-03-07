@@ -1,0 +1,203 @@
+.article-productDetail{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-productDetail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    height: 80%;
+}
+
+.section-productDetail-divOne {
+    position: relative;
+}
+
+.section-productDetail-divOne button {
+    position: absolute;
+    bottom: 20%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 2.8em;
+    cursor: pointer;
+    background: transparent;
+}
+
+.section-productDetail-divOne img {
+    width: 400px;
+    height: 400px;
+}
+
+.section-productDetail-divOne button:first-child{
+    left:  0;
+}
+
+.section-productDetail-divOne button:last-child{
+    right:  0;
+}
+
+.section-productDetail-divTwo{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.section-productDetail-divTwo h2{
+    font-size: 2em;
+    text-wrap: pretty;
+    width: 80%;
+}
+
+.section-productDetail-divTwo p{
+    font-size: 1.4em;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.sizes-section{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: start;
+}
+
+.sizes-section h4{
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+.sizes-ul{
+    display: grid;
+    width: 40%;
+    grid-template-columns: repeat(auto-fit,minmax(30px,1fr))
+}
+
+.sizes-ul li button {
+    cursor: pointer;
+    border: none;
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.size-button{
+    background: --parrafos;
+}
+
+.size-button-focus{
+    background-color: #004996;
+    color: white;
+}
+
+.section-customShirt{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 14px;
+}
+
+.section-customShirt-divOne{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-customShirt-divOne h4{
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+.patch-buttons {
+    display: grid;
+    width: 54%;
+    grid-template-columns: repeat(auto-fit,minmax(80px,1fr));
+    gap: 8px;
+    
+}
+
+.patch-buttons button {
+    width: 90px;
+    height: 40px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.patch{
+    background: --parrafos;
+}
+
+.patch-focus{
+    background-color: #004996;
+    color: white;
+}
+
+.section-customShirt-divTwo{
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.section-customShirt-divTwo h4{
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+.custom-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.custom-button{
+    background: --parrafos;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.custom-buttons input {
+    padding: 6px;
+    font-family: sans-serif;
+}
+
+.add-car{
+    background-color: #004996;
+    color: white;
+    width: 60%;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.add-car:hover{
+    background-color: cornflowerblue;
+}
+
+@media (max-width: 792px) {
+    .section-productDetail{
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .section-productDetail-divOne img {
+        width: 250px;
+        height: 250px;
+    }
+}

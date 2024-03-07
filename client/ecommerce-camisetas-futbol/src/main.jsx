@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ContextApp from './ContextApp.jsx';
+import ProductDetalil from './components/ProductDetail.jsx';
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/product-page/:q",
-    element: <h1>Your Product</h1>
+    element: <ProductDetalil/>
   }
 ])
 

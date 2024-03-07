@@ -3,10 +3,10 @@ import { createContext,useState } from "react";
 
 export const context = createContext();
 
-export const setDataShirt = (newData) => {
+export const setLocalDataShirt = (newData) => {
     localStorage.setItem("shirtData",JSON.stringify(newData))
 }
-export const shirtData = JSON.parse(localStorage.getItem("shirtData")) || []
+export const localShirtData = JSON.parse(localStorage.getItem("shirtData")) || []
 
 export const setLocalPrice = (newData) => {
     localStorage.setItem("price",JSON.stringify(newData))
@@ -18,7 +18,9 @@ function ContextApp({children}){
     const [ isFinding, setIsFinding ] = useState(false);
     const [ isBuyCar, setIsBuyCar ] = useState(false);
     const [ changePrice,setChangePrice ] = useState([]);
-    const [ shirtData,setShirtData ] = useState({})
+    const [ shirtData,setShirtData ] = useState({});
+    const [ orderDetails,setOrderDetails ] = useState({});
+    const [ find,setFind ] = useState("");
     // localStorage.setItem("shirtData",JSON.stringify(
     //     [
     //         {
@@ -62,7 +64,11 @@ function ContextApp({children}){
                 changePrice,
                 setChangePrice,
                 shirtData,
-                setShirtData
+                setShirtData,
+                setOrderDetails,
+                orderDetails,
+                find,
+                setFind
             }
         }>
             {children }
