@@ -39,8 +39,7 @@ const validatePassword = (user, password) => {
 
 // Route for user login
 router.post("/nuevoUsuario", async (req, res) => {
-    const { username, password } = req.body; // Extract username and password from the request body
-    console.log(req.body)
+    const { username, password } = JSON.parse(req.body); // Extract username and password from the request body
     try {
         // Retrieve users from the database
         const users = await getUsers();
