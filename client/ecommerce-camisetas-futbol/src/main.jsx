@@ -5,6 +5,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ContextApp from './ContextApp.jsx';
 import ProductDetalil from './components/ProductDetail.jsx';
+import Login from "./components/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/product-page/:q",
     element: <ProductDetalil/>
+  },
+  {
+    path: "/login",
+    element: <Login/>
   }
 ])
 

@@ -21,38 +21,6 @@ function ContextApp({children}){
     const [ shirtData,setShirtData ] = useState({});
     const [ orderDetails,setOrderDetails ] = useState({});
     const [ find,setFind ] = useState("");
-    // localStorage.setItem("shirtData",JSON.stringify(
-    //     [
-    //         {
-    //             name: "Camiseta Real Madrid 23/24",
-    //             price: 40,
-    //             src: "https://firebasestorage.googleapis.com/v0/b/eccomerce-1ddf8.appspot.com/o/La%20Liga%2FRMCFMZ0127_01_952e1722-868a-4d90-9a92-a80d3a23fbc8_500x480.webp?alt=media&token=2e8c1a9c-a3a5-4761-a66e-619d74441517",
-    //             stock: 1,
-    //             hasLigaPatch: false,
-    //             hasChampionsPatch: false,
-    //             showing: true
-    //         },
-    //         {
-    //             name: "Camiseta Barcelona 23/24",
-    //             price: 40,
-    //             src: "https://firebasestorage.googleapis.com/v0/b/eccomerce-1ddf8.appspot.com/o/La%20Liga%2F00199455128597____17__1200x1200.avif?alt=media&token=49627e16-23b9-4b1c-a168-10e4b909883b",
-    //             stock: 1,
-    //             hasLigaPatch: false,
-    //             hasChampionsPatch: false,
-    //             showing: true
-    //         },
-    //         {
-    //             name: "Camiseta Chelsea 23/24",
-    //             price: 40,
-    //             src: "https://firebasestorage.googleapis.com/v0/b/eccomerce-1ddf8.appspot.com/o/Premier%2F00199455325045____11__1200x1200.avif?alt=media&token=8ca27cdb-0c3c-4e57-ad80-137d52c973a4",
-    //             stock: 1,
-    //             hasLigaPatch: false,
-    //             hasChampionsPatch: false,
-    //             showing: true
-    //         }
-    //     ]
-    // ))
-
 
     return (
         <context.Provider value={

@@ -4,7 +4,7 @@ import "../styles/HeroBanner.css";
 
 function HeroBanner(){
     return <section className={"HeroBanner"}>
-        <img src={banner} alt="imagen" />
+        <img src={banner} loading="lazy" alt="imagen" />
         <div className="HeroBanner-div">
             <h1>Colección Temporada 23/24</h1>
             <p>Donde la pasión por el fútbol se viste con estilo: camisetas que inspiran cada jugada, cada gol.</p>

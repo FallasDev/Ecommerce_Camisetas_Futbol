@@ -1,0 +1,30 @@
+.league-products {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.list-leagueTeams{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+
+
+.list-leagueTeams-Link{
+    text-decoration: none;
+    color: black;
+}
+
+
+.list-leagueTeams-li img {
+    width: 200px;
+    filter: brightness(0.7);
+}

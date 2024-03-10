@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function FindComponent(){
 
-    const { shirtData,setShirtData,isFinding,setIsFinding,find,setFind } = useContext(context);
+    const { shirtData,setShirtData,isFinding,setIsFinding } = useContext(context);
     const [ inputValue,setInputValue ] = useState("");
     const [ speechInputValue,setSpeechInputValue ] = useState("");
     let [ contador,setContador ] = useState(1)
@@ -20,19 +20,6 @@ function FindComponent(){
         .then(res => res.json())
         .then(dataJSON => {setShirtData(dataJSON); console.log(dataJSON)})
     },[inputValue]);
-
-    useEffect(() => {
-            const IntervalID = setInterval(() => {
-                if(contador <= 3){
-                    console.log(contador)
-                    setContador(contador++)
-                }
-            },1000)
-
-            return () => {
-                clearInterval(IntervalID)
-            }
-    },[setIsRecognizing])
     
     const buttonRef = useRef(null);
     useEffect(() => {
@@ -88,7 +75,7 @@ function FindComponent(){
                             {item && item.LigaData && item.LigaData.Nombre ? (
                                 <Link onClick={() => setIsFinding(false)} className="product-link" to={`/product-page/${item.LigaData.Nombre}`}>{item.LigaData.Nombre}</Link>
                             ) : (
-                                item && item.Nombre ? <Link onClick={() => setIsFinding(false)}  className="product-link" to={`/product-page/${item.Nombre}`}>{item.Nombre}</Link> : null
+                                item && item.Nombre ? <Link onClick={() => {setIsFinding(false); setShirtData(item)}}  className="product-link" to={`/product-page/${item.Nombre}`}>{item.Nombre}</Link> : null
                             )}
                         </li>
                 )}

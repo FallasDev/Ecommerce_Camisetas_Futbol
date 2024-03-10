@@ -17,13 +17,12 @@ function BuyCarComponent(){
 
     const priceChange = () => {
         let finalPrice = 0;
-        let patchChampionsAmount = 0;
-        let patchLigaAmount = 0
         if(changePrice.length > 0){
             changePrice.map((item) => {
-               patchChampionsAmount = item.patch.hasLigaPatch ? 6 : 0
-               patchLigaAmount = item.patch.hasChampionsPatch ? 6 : 0
+               const patchChampionsAmount = item.patch.hasLigaPatch ? 6 : 0
+               const patchLigaAmount = item.patch.hasChampionsPatch ? 6 : 0
                finalPrice += (item.price * item.stock) + patchChampionsAmount + patchLigaAmount
+               console.log(patchChampionsAmount, patchLigaAmount)
                setPrice(finalPrice);
                setLocalPrice(finalPrice);
            })

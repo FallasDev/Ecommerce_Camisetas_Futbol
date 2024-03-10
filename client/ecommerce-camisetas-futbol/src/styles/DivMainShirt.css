@@ -17,7 +17,7 @@
 }
 
 .shirt img{
-    width: 480px;
+    width: 380px;
     filter:blur(1);
     border-radius: 32px;
 }
@@ -42,6 +42,6 @@
     }
 
     .shirt img {    
-        width: 340px;
+        width: 300px;
     }
 }

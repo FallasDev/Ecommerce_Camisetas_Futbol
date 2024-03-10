@@ -9,7 +9,7 @@ function DivMainShirt(){
         method: "GET",
         })
         .then(response => response.json())
-        .then(dataJson => setData(dataJson));
+        .then(dataJson => {setData(dataJson); console.log(dataJson)});
     }, []);
 
     return (

@@ -7,6 +7,8 @@ import { useContext } from "react";
 import { context } from "../ContextApp";
 import Lupa from "../secondaryComponents/Lupa";
 import BuyCarComponent from "./BuyCarComponent";
+import { Link } from "react-router-dom";
+import Login from "./Login";
 
 function Header(){
 
@@ -29,7 +31,7 @@ function Header(){
                 <ul className="nav-ul">
                     <Lupa/>
                     <li><button className="carito" onClick={() => setIsBuyCar(!isBuyCar)}><img src={carritoDeCompras} alt="" /></button></li>
-                    <li><a href="">Iniciar Sesión</a></li>
+                    <li><Link to="/login">Iniciar Sesión</Link></li>
                 </ul>
             </nav> : <FindComponent/>} 
             {isBuyCar && <BuyCarComponent/>}

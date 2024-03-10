@@ -10,7 +10,6 @@ function ShirtSizes(){
     useEffect(() => {
         const newDetails = {...orderDetails,size}
         setOrderDetails(newDetails)
-        console.log(newDetails)
     },[size])
     
     const shirtSizes = [
@@ -29,7 +28,6 @@ function ShirtSizes(){
             <ul className="sizes-ul">
                 {shirtSizes.map((item,index) => 
                     <li key={index}>
-                        {console.log(item === size, item)}
                         <button onClick={() => setSize(item)} className={item === size ? "size-button-focus" : "size-button"}>{item}</button>
                     </li>
                 )}
