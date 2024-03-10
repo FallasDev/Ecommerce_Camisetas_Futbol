@@ -15,6 +15,7 @@ const serviceAcount = {
     universe_domain: process.env.UNIVERSE_DOMAIN
 };
 
+console.log(serviceAcount)
 
 export const admin = Admin.initializeApp({
     credential: Admin.credential.cert(serviceAcount),
