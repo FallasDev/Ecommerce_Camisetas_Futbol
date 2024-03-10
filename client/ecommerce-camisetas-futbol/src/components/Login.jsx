@@ -5,12 +5,8 @@ function Login(){
     const [ data,setData ] = useState({})
 
     useEffect(() => {
-        console.log(data)
         fetch("https://ecommerce-camisetas-futbol-ltiq.onrender.com/GoalThreads/nuevoUsuario",{
             method: "POST",
-            headers: {
-                "Content-Type": "application/json;charset=UTF-8"
-            },
             body: JSON.stringify(data)
         })
         .then((res) => res.json())
