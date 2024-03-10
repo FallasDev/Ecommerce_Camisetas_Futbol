@@ -65,11 +65,12 @@ const validations = async (user, email, password) => {
 
 // Express route for user registration
 router.post("/registro", async (req, res) => {
-    const { usuario, correo, contraseña } = req.body;
+    const data = req.body;
+    const { usuario,correo,contraseña } = JSON.stringify(data)
     try {
         await validations(usuario, correo, contraseña);
         db.ref("usuarios").push(
-            req.body
+            { usuario,correo,contraseña }
         );
         res.send("SAVED");
     } catch (err) {

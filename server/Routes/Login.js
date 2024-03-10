@@ -39,7 +39,6 @@ const validatePassword = (user, password) => {
 
 // Route for user login
 router.post("/nuevoUsuario", async (req, res) => {
-    res.header("Access-Control-Allow-Origin","*")
     const { username, password } = JSON.parse(req.body); // Extract username and password from the request body
     try {
         // Retrieve users from the database
